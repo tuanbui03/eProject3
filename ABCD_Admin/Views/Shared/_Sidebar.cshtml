@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+     <title>@ViewBag.Title - ABCD Mall Admin</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/style.css" />
+</head>
+<body>
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <h2><span class="ABCD MALL"></span>ABCD MALL</h2>
+            </div>
+
+            <div class="scrollbar" id="style-1">
+                <div class="force-overflow"></div>
+                <div class="sidebar-menu">
+                    <ul>
+                        <li>
+                            <a href="" class="active">
+                                <span class="las la-igloo"></span>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-address-card"></span>
+                                <span>Accounts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-users"></span>
+                                <span>Customers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-address-book"></span>
+                                <span>Employees</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-comment"></span>
+                                <span>Feedbacks</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-stream"></span>
+                                <span>Gallery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-film"></span>
+                                <span>Movies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-shopping-bag"></span>
+                                <span>Orders</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-list"></span>
+                                <span>Products</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-tv"></span>
+                                <span>Rooms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-couch"></span>
+                                <span>RoomSeats</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-expand"></span>
+                                <span>Screening</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <span class="las la-store"></span>
+                                <span>Shops</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span class="las la-ticket-alt"></span>
+                                <span>Tickets</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+        <div class="main-content">
+            <header>
+                <h2>
+                    <label for="">
+                        <span class="las la-bars"></span>
+                    </label>
+
+                    Dashboard
+                </h2>
+
+                <div class="search-wrapper">
+                    <span class="las la-search"></span>
+                    <input type="search" placeholder="Search here" />
+                </div>
+
+                <div class="user-wrapper">
+                    <img src="~/Img/292480129_1079689896266392_5046651088004477618_n.jpg" width="30px" height="30px" alt="" />
+                    <div>
+                        <h4>Test</h4>
+                        <small>Test admin</small>
+                    </div>
+                </div>
+            </header>
+
+            @RenderBody()
+
+
+
+        </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ABCD Mall Admin</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/style.css" />
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    @*Bui Anh Tuan -- font-end*@
+    
+    <div class="main-content">
+        <header>
+            <h2>
+                    <label for="">
+                        <span class="las la-bars"></span>
+                    </label>
+                    
+                    Dashboard
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="search"></span>
+                <input type="search" placeholder="Search here" />
+            </div>
+
+            <div class="user-wrapper">
+                <img src="~/Img/292480129_1079689896266392_5046651088004477618_n.jpg" width="30px" height="30px" alt="" />
+                <div>
+                    <h4>Test</h4>
+                    <small>Test admin</small>
+                </div>
+            </div>
+        </header>
+
+
+        <main>
+            @RenderBody();
+        </main>
+    </div>
+
+
+    <div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
