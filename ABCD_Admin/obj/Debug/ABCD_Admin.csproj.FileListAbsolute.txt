@@ -77,3 +77,7 @@ C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.Cor
 C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CopyComplete
 C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.dll
 C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.pdb
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.SqlServer.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.SqlServer.xml

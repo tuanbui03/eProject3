@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -124,7 +132,66 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\test.cs" />
+    <Compile Include="Models\ABCDModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABCDModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ABCDModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ABCDModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABCDModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Accounts.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customers.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employees.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Feedbacks.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gallery.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Movies.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orders.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Products.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rooms.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomSeats.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Screening.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Seats.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shops.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tickets.cs">
+      <DependentUpon>ABCDModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +260,16 @@
     <Content Include="js\main.js" />
     <Content Include="js\moment.js" />
     <Content Include="media\9606031aabebde32fa96edeff071a132.jpg" />
+    <Content Include="Models\ABCDModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ABCDModels.edmx</DependentUpon>
+      <LastGenOutput>ABCDModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ABCDModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ABCDModels.edmx</DependentUpon>
+      <LastGenOutput>ABCDModels.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\animsition\animsition.min.css" />
     <Content Include="Scripts\animsition\animsition.min.js" />
     <Content Include="Scripts\bootstrap-4.1\bootstrap.min.css" />
@@ -363,6 +440,13 @@
     <Content Include="fonts\poppins\poppins-v5-latin-regular.ttf" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <EntityDeploy Include="Models\ABCDModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ABCDModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ABCDModels.edmx.diagram">
+      <DependentUpon>ABCDModels.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\chartjs\Chart.bundle.min.js" />
     <Content Include="Scripts\circle-progress\circle-progress.js" />
@@ -773,6 +857,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
