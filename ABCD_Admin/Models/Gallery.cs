@@ -19,8 +19,8 @@ namespace ABCD_Admin.Models
         public string objectType { get; set; }
         public int objectId { get; set; }
     
-        public virtual Movies Movies { get; set; }
-        public virtual Products Products { get; set; }
-        public virtual Shops Shops { get; set; }
+        public virtual Movy Movy { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Shop Shop { get; set; }
     }
 }

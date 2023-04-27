@@ -17,9 +17,8 @@ namespace ABCD_Admin.Models
         public int cartId { get; set; }
         public int customerId { get; set; }
         public int ticketId { get; set; }
-        public int quantity { get; set; }
     
-        public virtual Customers Customers { get; set; }
-        public virtual Tickets Tickets { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Ticket Ticket { get; set; }
     }
 }
