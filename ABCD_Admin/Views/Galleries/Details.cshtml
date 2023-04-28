@@ -1,0 +1,59 @@
+﻿@model ABCD_Admin.Models.Gallery
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Gallery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.imagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.objectType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.objectType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movies.movieTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movies.movieTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Products.productName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Products.productName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shops.shopName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shops.shopName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.imageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

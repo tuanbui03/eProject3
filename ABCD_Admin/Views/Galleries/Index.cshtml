@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ABCD_Admin.Models.Gallery>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imagePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.objectType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movies.movieTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Products.productName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shops.shopName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imagePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.objectType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movies.movieTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.productName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shops.shopName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.imageId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.imageId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.imageId })
+        </td>
+    </tr>
+}
+
+</table>

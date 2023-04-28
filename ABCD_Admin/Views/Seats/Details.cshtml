@@ -1,0 +1,35 @@
+﻿@model ABCD_Admin.Models.Seats
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Seats</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.seatName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.seatName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isVipSeat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isVipSeat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.seatId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
