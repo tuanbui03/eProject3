@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ABCD_Admin.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cardNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.userName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cardNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.userName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.customerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.customerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.customerId })
+        </td>
+    </tr>
+}
+
+</table>

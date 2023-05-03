@@ -17,8 +17,8 @@ namespace ABCD_Admin.Controllers
         // GET: Galleries
         public ActionResult Index()
         {
-            var gallery = db.Gallery.Include(g => g.Movies).Include(g => g.Products).Include(g => g.Shops);
-            return View(gallery.ToList());
+            var galleries = db.Galleries.Include(g => g.Movy).Include(g => g.Product).Include(g => g.Shop);
+            return View(galleries.ToList());
         }
 
         // GET: Galleries/Details/5
@@ -28,7 +28,7 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery gallery = db.Gallery.Find(id);
+            Gallery gallery = db.Galleries.Find(id);
             if (gallery == null)
             {
                 return HttpNotFound();
@@ -54,7 +54,7 @@ namespace ABCD_Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Gallery.Add(gallery);
+                db.Galleries.Add(gallery);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -72,7 +72,7 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery gallery = db.Gallery.Find(id);
+            Gallery gallery = db.Galleries.Find(id);
             if (gallery == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gallery gallery = db.Gallery.Find(id);
+            Gallery gallery = db.Galleries.Find(id);
             if (gallery == null)
             {
                 return HttpNotFound();
@@ -122,8 +122,8 @@ namespace ABCD_Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Gallery gallery = db.Gallery.Find(id);
-            db.Gallery.Remove(gallery);
+            Gallery gallery = db.Galleries.Find(id);
+            db.Galleries.Remove(gallery);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

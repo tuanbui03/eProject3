@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,10 +47,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -128,72 +129,92 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\FeedbacksController.cs" />
+    <Compile Include="Controllers\FunctionsController.cs" />
     <Compile Include="Controllers\GalleriesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\ScreeningsController.cs" />
     <Compile Include="Controllers\SeatsController.cs" />
+    <Compile Include="Controllers\ShopsController.cs" />
+    <Compile Include="Controllers\TicketsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ABCDModels.Context.cs">
+    <Compile Include="Models\ABCD-Admin.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ABCDModels.Context.tt</DependentUpon>
+      <DependentUpon>ABCD-Admin.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ABCDModels.cs">
+    <Compile Include="Models\ABCD-Admin.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ABCDModels.Designer.cs">
+    <Compile Include="Models\ABCD-Admin.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ABCDModels.edmx</DependentUpon>
+      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Accounts.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Customers.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Feedback.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employees.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Feedbacks.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Function.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Gallery.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Movies.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Group.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Orders.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Movy.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Products.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Rooms.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RoomSeats.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Room.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomSeat.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Screening.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Seats.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Seat.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Shops.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Shop.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Tickets.cs">
-      <DependentUpon>ABCDModels.tt</DependentUpon>
+    <Compile Include="Models\Ticket.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserFunction.cs">
+      <DependentUpon>ABCD-Admin.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -263,15 +284,15 @@
     <Content Include="js\main.js" />
     <Content Include="js\moment.js" />
     <Content Include="media\9606031aabebde32fa96edeff071a132.jpg" />
-    <Content Include="Models\ABCDModels.Context.tt">
+    <Content Include="Models\ABCD-Admin.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ABCDModels.edmx</DependentUpon>
-      <LastGenOutput>ABCDModels.Context.cs</LastGenOutput>
+      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
+      <LastGenOutput>ABCD-Admin.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ABCDModels.tt">
+    <Content Include="Models\ABCD-Admin.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ABCDModels.edmx</DependentUpon>
-      <LastGenOutput>ABCDModels.cs</LastGenOutput>
+      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
+      <LastGenOutput>ABCD-Admin.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\animsition\animsition.min.css" />
     <Content Include="Scripts\animsition\animsition.min.js" />
@@ -443,12 +464,12 @@
     <Content Include="fonts\poppins\poppins-v5-latin-regular.ttf" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff2" />
-    <EntityDeploy Include="Models\ABCDModels.edmx">
+    <EntityDeploy Include="Models\ABCD-Admin.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ABCDModels.Designer.cs</LastGenOutput>
+      <LastGenOutput>ABCD-Admin.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ABCDModels.edmx.diagram">
-      <DependentUpon>ABCDModels.edmx</DependentUpon>
+    <Content Include="Models\ABCD-Admin.edmx.diagram">
+      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\chartjs\Chart.bundle.min.js" />
@@ -844,6 +865,61 @@
     <Content Include="vendor\slick\slick.less" />
     <Content Include="vendor\slick\slick.scss" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Functions\Create.cshtml" />
+    <Content Include="Views\Functions\Delete.cshtml" />
+    <Content Include="Views\Functions\Details.cshtml" />
+    <Content Include="Views\Functions\Edit.cshtml" />
+    <Content Include="Views\Functions\Index.cshtml" />
+    <Content Include="Views\Groups\Create.cshtml" />
+    <Content Include="Views\Groups\Delete.cshtml" />
+    <Content Include="Views\Groups\Details.cshtml" />
+    <Content Include="Views\Groups\Edit.cshtml" />
+    <Content Include="Views\Groups\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Feedbacks\Create.cshtml" />
+    <Content Include="Views\Feedbacks\Delete.cshtml" />
+    <Content Include="Views\Feedbacks\Details.cshtml" />
+    <Content Include="Views\Feedbacks\Edit.cshtml" />
+    <Content Include="Views\Feedbacks\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Tickets\Create.cshtml" />
+    <Content Include="Views\Tickets\Delete.cshtml" />
+    <Content Include="Views\Tickets\Details.cshtml" />
+    <Content Include="Views\Tickets\Edit.cshtml" />
+    <Content Include="Views\Tickets\Index.cshtml" />
+    <Content Include="Views\Seats\Create.cshtml" />
+    <Content Include="Views\Seats\Delete.cshtml" />
+    <Content Include="Views\Seats\Details.cshtml" />
+    <Content Include="Views\Seats\Edit.cshtml" />
+    <Content Include="Views\Seats\Index.cshtml" />
+    <Content Include="Views\Rooms\Create.cshtml" />
+    <Content Include="Views\Rooms\Delete.cshtml" />
+    <Content Include="Views\Rooms\Details.cshtml" />
+    <Content Include="Views\Rooms\Edit.cshtml" />
+    <Content Include="Views\Rooms\Index.cshtml" />
+    <Content Include="Views\Screenings\Create.cshtml" />
+    <Content Include="Views\Screenings\Delete.cshtml" />
+    <Content Include="Views\Screenings\Details.cshtml" />
+    <Content Include="Views\Screenings\Edit.cshtml" />
+    <Content Include="Views\Screenings\Index.cshtml" />
     <Content Include="Views\Movies\Create.cshtml" />
     <Content Include="Views\Movies\Delete.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
@@ -854,11 +930,17 @@
     <Content Include="Views\Galleries\Details.cshtml" />
     <Content Include="Views\Galleries\Edit.cshtml" />
     <Content Include="Views\Galleries\Index.cshtml" />
-    <Content Include="Views\Seats\Create.cshtml" />
-    <Content Include="Views\Seats\Delete.cshtml" />
-    <Content Include="Views\Seats\Details.cshtml" />
-    <Content Include="Views\Seats\Edit.cshtml" />
-    <Content Include="Views\Seats\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Shops\Create.cshtml" />
+    <Content Include="Views\Shops\Delete.cshtml" />
+    <Content Include="Views\Shops\Details.cshtml" />
+    <Content Include="Views\Shops\Edit.cshtml" />
+    <Content Include="Views\Shops\Index.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -912,7 +994,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

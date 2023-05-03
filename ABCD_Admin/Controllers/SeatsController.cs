@@ -27,12 +27,12 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Seats seats = db.Seats.Find(id);
-            if (seats == null)
+            Seat seat = db.Seats.Find(id);
+            if (seat == null)
             {
                 return HttpNotFound();
             }
-            return View(seats);
+            return View(seat);
         }
 
         // GET: Seats/Create
@@ -46,16 +46,16 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "seatId,seatName,isVipSeat")] Seats seats)
+        public ActionResult Create([Bind(Include = "seatId,seatName,isVipSeat")] Seat seat)
         {
             if (ModelState.IsValid)
             {
-                db.Seats.Add(seats);
+                db.Seats.Add(seat);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(seats);
+            return View(seat);
         }
 
         // GET: Seats/Edit/5
@@ -65,12 +65,12 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Seats seats = db.Seats.Find(id);
-            if (seats == null)
+            Seat seat = db.Seats.Find(id);
+            if (seat == null)
             {
                 return HttpNotFound();
             }
-            return View(seats);
+            return View(seat);
         }
 
         // POST: Seats/Edit/5
@@ -78,15 +78,15 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "seatId,seatName,isVipSeat")] Seats seats)
+        public ActionResult Edit([Bind(Include = "seatId,seatName,isVipSeat")] Seat seat)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(seats).State = EntityState.Modified;
+                db.Entry(seat).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(seats);
+            return View(seat);
         }
 
         // GET: Seats/Delete/5
@@ -96,12 +96,12 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Seats seats = db.Seats.Find(id);
-            if (seats == null)
+            Seat seat = db.Seats.Find(id);
+            if (seat == null)
             {
                 return HttpNotFound();
             }
-            return View(seats);
+            return View(seat);
         }
 
         // POST: Seats/Delete/5
@@ -109,8 +109,8 @@ namespace ABCD_Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Seats seats = db.Seats.Find(id);
-            db.Seats.Remove(seats);
+            Seat seat = db.Seats.Find(id);
+            db.Seats.Remove(seat);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

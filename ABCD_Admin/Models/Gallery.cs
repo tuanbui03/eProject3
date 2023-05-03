@@ -14,13 +14,21 @@ namespace ABCD_Admin.Models
     
     public partial class Gallery
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Gallery()
+        {
+            this.Feedbacks = new HashSet<Feedback>();
+        }
+    
         public int imageId { get; set; }
         public string imagePath { get; set; }
         public string objectType { get; set; }
         public int objectId { get; set; }
     
-        public virtual Movies Movies { get; set; }
-        public virtual Products Products { get; set; }
-        public virtual Shops Shops { get; set; }
+        public virtual Movy Movy { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Shop Shop { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
     }
 }

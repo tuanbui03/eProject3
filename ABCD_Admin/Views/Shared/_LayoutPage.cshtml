@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
+@{ 
+    if (Session["UserId"] == null)
+    {
+        Context.Response.Redirect("~/Users/Login");
+    }
+}
+
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -478,7 +485,7 @@
             <!-- HEADER DESKTOP-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                @RenderBody();
+                @RenderBody()
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         

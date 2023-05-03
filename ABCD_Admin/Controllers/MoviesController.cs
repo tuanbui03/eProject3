@@ -27,12 +27,12 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movies movies = db.Movies.Find(id);
-            if (movies == null)
+            Movy movy = db.Movies.Find(id);
+            if (movy == null)
             {
                 return HttpNotFound();
             }
-            return View(movies);
+            return View(movy);
         }
 
         // GET: Movies/Create
@@ -46,16 +46,16 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,seatsAvailable,status")] Movies movies)
+        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,seatsAvailable,status")] Movy movy)
         {
             if (ModelState.IsValid)
             {
-                db.Movies.Add(movies);
+                db.Movies.Add(movy);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(movies);
+            return View(movy);
         }
 
         // GET: Movies/Edit/5
@@ -65,12 +65,12 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movies movies = db.Movies.Find(id);
-            if (movies == null)
+            Movy movy = db.Movies.Find(id);
+            if (movy == null)
             {
                 return HttpNotFound();
             }
-            return View(movies);
+            return View(movy);
         }
 
         // POST: Movies/Edit/5
@@ -78,15 +78,15 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,seatsAvailable,status")] Movies movies)
+        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,seatsAvailable,status")] Movy movy)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(movies).State = EntityState.Modified;
+                db.Entry(movy).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(movies);
+            return View(movy);
         }
 
         // GET: Movies/Delete/5
@@ -96,12 +96,12 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movies movies = db.Movies.Find(id);
-            if (movies == null)
+            Movy movy = db.Movies.Find(id);
+            if (movy == null)
             {
                 return HttpNotFound();
             }
-            return View(movies);
+            return View(movy);
         }
 
         // POST: Movies/Delete/5
@@ -109,8 +109,8 @@ namespace ABCD_Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Movies movies = db.Movies.Find(id);
-            db.Movies.Remove(movies);
+            Movy movy = db.Movies.Find(id);
+            db.Movies.Remove(movy);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
