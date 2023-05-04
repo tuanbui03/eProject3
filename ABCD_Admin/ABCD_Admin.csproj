@@ -139,6 +139,7 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\RoomSeatsController.cs" />
     <Compile Include="Controllers\ScreeningsController.cs" />
     <Compile Include="Controllers\SeatsController.cs" />
     <Compile Include="Controllers\ShopsController.cs" />
@@ -941,6 +942,11 @@
     <Content Include="Views\Shops\Edit.cshtml" />
     <Content Include="Views\Shops\Index.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\RoomSeats\Create.cshtml" />
+    <Content Include="Views\RoomSeats\Delete.cshtml" />
+    <Content Include="Views\RoomSeats\Details.cshtml" />
+    <Content Include="Views\RoomSeats\Edit.cshtml" />
+    <Content Include="Views\RoomSeats\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
