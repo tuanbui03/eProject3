@@ -36,32 +36,6 @@ namespace ABCD_Admin.Controllers
             return View(order);
         }
 
-        // GET: Orders/Create
-        public ActionResult Create()
-        {
-            ViewBag.customerId = new SelectList(db.Customers, "customerId", "cardNumber");
-            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "employeeId");
-            return View();
-        }
-
-        // POST: Orders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "orderId,customerId,employeeId,totalPrice,isConfirm,isPurchased,bookingDate")] Order order)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Orders.Add(order);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.customerId = new SelectList(db.Customers, "customerId", "cardNumber", order.customerId);
-            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "employeeId", order.employeeId);
-            return View(order);
-        }
 
         // GET: Orders/Edit/5
         public ActionResult Edit(int? id)

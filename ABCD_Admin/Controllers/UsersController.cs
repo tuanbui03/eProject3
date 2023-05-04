@@ -34,6 +34,13 @@ namespace ABCD_Admin.Controllers
             return View(user);
         }
 
+        public ActionResult Logout()
+        {
+            Session.Clear();
+
+            return RedirectToAction("Login", "Users");
+        }
+
 
 
         // GET: Users
