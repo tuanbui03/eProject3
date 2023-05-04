@@ -27,6 +27,7 @@ namespace ABCD_Admin.Controllers
             if (employeeInDatabase != null)
             {
                 Session["employeeId"] = employeeInDatabase.employeeId;
+                Session["employeeName"] = employeeInDatabase.User.userName;
                 return RedirectToAction("Index", "Home");
             }
 
