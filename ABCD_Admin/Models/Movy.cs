@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Movy
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,11 +24,19 @@ namespace ABCD_Admin.Models
         }
     
         public int movieId { get; set; }
+        [Required]
         public string movieTitle { get; set; }
+        [Required]
         public string movieDescription { get; set; }
+        [Required]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
         public System.DateTime releaseDate { get; set; }
+        [Required]
         public int duration { get; set; }
+        [Required]
+        [Range(0, 143, ErrorMessage = "The number of available seats must be between 0 and 143.")]
         public int seatsAvailable { get; set; }
+        [Required]
         public byte status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

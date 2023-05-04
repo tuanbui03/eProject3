@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Gallery
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,11 @@ namespace ABCD_Admin.Models
         }
     
         public int imageId { get; set; }
+        [Required]
         public string imagePath { get; set; }
+        [Required]
         public string objectType { get; set; }
+        [Required]
         public int objectId { get; set; }
     
         public virtual Movy Movy { get; set; }
