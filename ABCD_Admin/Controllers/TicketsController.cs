@@ -36,75 +36,44 @@ namespace ABCD_Admin.Controllers
             return View(ticket);
         }
 
-        // GET: Tickets/Create
-        public ActionResult Create()
-        {
-            ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle");
-            ViewBag.roomId = new SelectList(db.RoomSeats, "roomId", "roomId");
-            ViewBag.screeningId = new SelectList(db.Screenings, "screeningId", "screeningId");
-            ViewBag.ticketId = new SelectList(db.OrderDetails, "ticketId", "ticketId");
-            return View();
-        }
+        //// GET: Tickets/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Ticket ticket = db.Tickets.Find(id);
+        //    if (ticket == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", ticket.movieId);
+        //    ViewBag.roomId = new SelectList(db.RoomSeats, "roomId", "roomId", ticket.roomId);
+        //    ViewBag.screeningId = new SelectList(db.Screenings, "screeningId", "screeningId", ticket.screeningId);
+        //    ViewBag.ticketId = new SelectList(db.OrderDetails, "ticketId", "ticketId", ticket.ticketId);
+        //    return View(ticket);
+        //}
 
-        // POST: Tickets/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ticketId,roomId,seatId,seatName,movieId,screeningId,TicketCode")] Ticket ticket)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Tickets.Add(ticket);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", ticket.movieId);
-            ViewBag.roomId = new SelectList(db.RoomSeats, "roomId", "roomId", ticket.roomId);
-            ViewBag.screeningId = new SelectList(db.Screenings, "screeningId", "screeningId", ticket.screeningId);
-            ViewBag.ticketId = new SelectList(db.OrderDetails, "ticketId", "ticketId", ticket.ticketId);
-            return View(ticket);
-        }
-
-        // GET: Tickets/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ticket ticket = db.Tickets.Find(id);
-            if (ticket == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", ticket.movieId);
-            ViewBag.roomId = new SelectList(db.RoomSeats, "roomId", "roomId", ticket.roomId);
-            ViewBag.screeningId = new SelectList(db.Screenings, "screeningId", "screeningId", ticket.screeningId);
-            ViewBag.ticketId = new SelectList(db.OrderDetails, "ticketId", "ticketId", ticket.ticketId);
-            return View(ticket);
-        }
-
-        // POST: Tickets/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ticketId,roomId,seatId,seatName,movieId,screeningId,TicketCode")] Ticket ticket)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(ticket).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", ticket.movieId);
-            ViewBag.roomId = new SelectList(db.RoomSeats, "roomId", "roomId", ticket.roomId);
-            ViewBag.screeningId = new SelectList(db.Screenings, "screeningId", "screeningId", ticket.screeningId);
-            ViewBag.ticketId = new SelectList(db.OrderDetails, "ticketId", "ticketId", ticket.ticketId);
-            return View(ticket);
-        }
+        //// POST: Tickets/Edit/5
+        //// To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "ticketId,roomId,seatId,seatName,movieId,screeningId")] Ticket ticket)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(ticket).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", ticket.movieId);
+        //    ViewBag.roomId = new SelectList(db.RoomSeats, "roomId", "roomId", ticket.roomId);
+        //    ViewBag.screeningId = new SelectList(db.Screenings, "screeningId", "screeningId", ticket.screeningId);
+        //    ViewBag.ticketId = new SelectList(db.OrderDetails, "ticketId", "ticketId", ticket.ticketId);
+        //    return View(ticket);
+        //}
 
         // GET: Tickets/Delete/5
         public ActionResult Delete(int? id)

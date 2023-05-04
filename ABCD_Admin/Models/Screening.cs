@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Screening
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,14 @@ namespace ABCD_Admin.Models
         }
     
         public int screeningId { get; set; }
+        [Required]
         public int movieId { get; set; }
+        [Required]
         public int roomId { get; set; }
+        [Required]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
         public System.DateTime reservedTime { get; set; }
+        [Required]
         public int price { get; set; }
     
         public virtual Movy Movy { get; set; }

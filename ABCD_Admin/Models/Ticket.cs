@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Ticket
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,15 @@ namespace ABCD_Admin.Models
         }
     
         public int ticketId { get; set; }
+        [Required]
         public int roomId { get; set; }
+        [Required]
         public int seatId { get; set; }
+        [Required]
         public string seatName { get; set; }
+        [Required]
         public int movieId { get; set; }
+        [Required]
         public int screeningId { get; set; }
         public string TicketCode { get; set; }
     
