@@ -2,7 +2,7 @@
 <html lang="en">
 
 @{ 
-    if (Session["UserId"] == null)
+    if (Session["employeeId"] == null)
     {
         Context.Response.Redirect("~/Users/Login");
     }

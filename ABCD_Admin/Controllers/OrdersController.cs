@@ -59,18 +59,27 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "orderId,customerId,employeeId,totalPrice,isConfirm,isPurchased,bookingDate")] Order order)
+        public ActionResult Edit([Bind(Include = "orderId,isConfirm,isPurchased")] Order order)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
+                var existingOrder = db.Orders.Find(order.orderId);
+
+                existingOrder.isConfirm = order.isConfirm;
+                existingOrder.isPurchased = order.isPurchased;
+                existingOrder.employeeId = (int)Session["employeeId"];
+
+                db.Entry(existingOrder).State = EntityState.Modified;
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
+
             ViewBag.customerId = new SelectList(db.Customers, "customerId", "cardNumber", order.customerId);
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "employeeId", order.employeeId);
             return View(order);
         }
+
 
         // GET: Orders/Delete/5
         public ActionResult Delete(int? id)
