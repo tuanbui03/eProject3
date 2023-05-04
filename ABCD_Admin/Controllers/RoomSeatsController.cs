@@ -81,42 +81,6 @@ namespace ABCD_Admin.Controllers
             return View(roomSeat);
         }
 
-        // GET: RoomSeats/Delete/5?roomId=1&seatId=1
-        public ActionResult Delete(int? roomId, int? seatId)
-        {
-            if (roomId == null || seatId == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            RoomSeat roomSeat = db.RoomSeats.SingleOrDefault(rs => rs.roomId == roomId && rs.seatId == seatId);
-
-            if (roomSeat == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View(roomSeat);
-        }
-
-        // POST: RoomSeats/Delete/5?roomId=1&seatId=1
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int roomId, int seatId)
-        {
-            RoomSeat roomSeat = db.RoomSeats.SingleOrDefault(rs => rs.roomId == roomId && rs.seatId == seatId);
-
-            if (roomSeat == null)
-            {
-                return HttpNotFound();
-            }
-
-            db.RoomSeats.Remove(roomSeat);
-            db.SaveChanges();
-
-            return RedirectToAction("Index");
-        }
-
 
         protected override void Dispose(bool disposing)
         {
