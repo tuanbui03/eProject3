@@ -7,54 +7,64 @@
 
 <h2>Index</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.totalPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isConfirm)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isPurchased)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.bookingDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customer.cardNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee.employeeId)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.totalPrice)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.isConfirm)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.isPurchased)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.bookingDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Customer.cardNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Employee.employeeId)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.totalPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isConfirm)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isPurchased)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.bookingDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer.cardNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee.employeeId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.orderId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.orderId }) |
-        </td>
-    </tr>
-}
-
-</table>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.totalPrice)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.isConfirm)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.isPurchased)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.bookingDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Customer.cardNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee.employeeId)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.orderId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.orderId }) |
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
