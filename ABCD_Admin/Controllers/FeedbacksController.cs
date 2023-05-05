@@ -36,31 +36,6 @@ namespace ABCD_Admin.Controllers
             return View(feedback);
         }
 
-        // GET: Feedbacks/Create
-        public ActionResult Create()
-        {
-            ViewBag.customerId = new SelectList(db.Customers, "customerId", "cardNumber");
-            return View();
-        }
-
-        // POST: Feedbacks/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,customerId,message,date,phoneNumber,email")] Feedback feedback)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Feedbacks.Add(feedback);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.customerId = new SelectList(db.Customers, "customerId", "cardNumber", feedback.customerId);
-            return View(feedback);
-        }
-
         // GET: Feedbacks/Edit/5
         public ActionResult Edit(int? id)
         {
