@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Feedback
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,15 @@ namespace ABCD_Admin.Models
         }
     
         public int id { get; set; }
+        [DisplayName("Customer")]
         public int customerId { get; set; }
+        [DisplayName("Message")]
         public string message { get; set; }
+        [DisplayName("Date")]
         public System.DateTime date { get; set; }
+        [DisplayName("Phone Number")]
         public string phoneNumber { get; set; }
+        [DisplayName("Email")]
         public string email { get; set; }
     
         public virtual Customer Customer { get; set; }

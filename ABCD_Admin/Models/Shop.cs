@@ -11,6 +11,7 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
     public partial class Shop
@@ -21,15 +22,20 @@ namespace ABCD_Admin.Models
             this.Galleries = new HashSet<Gallery>();
             this.Products = new HashSet<Product>();
         }
-    
+
+        [DisplayName("Shop")]
         public int shopId { get; set; }
         [Required]
+        [DisplayName("Shop Name")]
         public string shopName { get; set; }
         [Required]
+        [DisplayName("Shop Address")]
         public string shopAddress { get; set; }
         [Required]
+        [DisplayName("PhoneNumber")]
         public string phoneNumber { get; set; }
         [Required]
+        [DisplayName("Email")]
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

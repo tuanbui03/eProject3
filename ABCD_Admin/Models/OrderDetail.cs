@@ -11,10 +11,13 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class OrderDetail
     {
+        [DisplayName("Order")]
         public Nullable<int> orderId { get; set; }
+        [DisplayName("Ticket")]
         public int ticketId { get; set; }
     
         public virtual Order Order { get; set; }

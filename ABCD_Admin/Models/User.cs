@@ -26,7 +26,9 @@ namespace ABCD_Admin.Models
         public int userId { get; set; }
         [DisplayName("User Name")]
         public string userName { get; set; }
+        [DisplayName("Password")]
         public string password { get; set; }
+        [DisplayName("Email")]
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

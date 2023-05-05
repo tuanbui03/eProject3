@@ -11,6 +11,7 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
     public partial class Gallery
@@ -20,12 +21,16 @@ namespace ABCD_Admin.Models
         {
             this.Feedbacks = new HashSet<Feedback>();
         }
-    
+
+        [DisplayName("Image")]
         public int imageId { get; set; }
+        [DisplayName("Image Path")]
         [Required]
         public string imagePath { get; set; }
+        [DisplayName("Object Type")]
         [Required]
         public string objectType { get; set; }
+        [DisplayName("Object")]
         [Required]
         public int objectId { get; set; }
     

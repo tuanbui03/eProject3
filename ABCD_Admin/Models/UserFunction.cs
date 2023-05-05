@@ -11,11 +11,15 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class UserFunction
     {
+        [DisplayName("Users")]
         public int userId { get; set; }
+        [DisplayName("Function")]
         public int functionId { get; set; }
+        [DisplayName("Group")]
         public Nullable<int> groupId { get; set; }
     
         public virtual Function Function { get; set; }

@@ -11,6 +11,7 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
     public partial class Ticket
@@ -20,18 +21,25 @@ namespace ABCD_Admin.Models
         {
             this.Customers = new HashSet<Customer>();
         }
-    
+
+        [DisplayName("Ticket")]
         public int ticketId { get; set; }
         [Required]
+        [DisplayName("Room")]
         public int roomId { get; set; }
         [Required]
+        [DisplayName("Seat")]
         public int seatId { get; set; }
         [Required]
+        [DisplayName("Seat Name")]
         public string seatName { get; set; }
         [Required]
+        [DisplayName("Movie")]
         public int movieId { get; set; }
         [Required]
+        [DisplayName("Screen")]
         public int screeningId { get; set; }
+        [DisplayName("TicketCode")]
         public string TicketCode { get; set; }
     
         public virtual Movy Movy { get; set; }
